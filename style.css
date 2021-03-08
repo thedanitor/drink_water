@@ -1,22 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:400,600&display=swap");
+
+/* custom variables */
+:root {
+  --border-color: #144fc6;
+  --fill-color: #6ab3f8;
+}
 
 * {
-    /* width not affected by padding or border */
-    box-sizing: border-box;
+  /* width not affected by padding or border */
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    display: flex;
-    flex-direction: column;
-    /* Centered horizontally */
-    align-items: center; 
-    /* Centered vertically on 100% viewport */
-    justify-content: center;
-    /* 100% viewport height  */
-    height: 100vh;
-    /* don't want scrollbars  */
-    overflow: hidden;
-    /* no margins  */
-    margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #3494e4;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  /* Centered horizontally */
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  /* 10px top | none sides | none bottom  */
+  margin: 10px 0 0;
+}
+
+h3 {
+  font-weight: 400;
+  /* 10 top,bottom | none sides */
+  margin: 10px 0;
+}
+
+/* cup class  */
+.cup {
+  background-color: #fff;
+  /* 4px wide solid border */
+  border: 4px solid var(--border-color);
+  color: var(--border-color);
+  /* top 0 | bottom 0 | right 40 | left 40 */
+  border-radius: 0 0 40px 40px;
+  height: 330px;
+  width: 150px;
+  /* top,bottom 30 | sides 0 */
+  margin: 30px 0;
+  display: flex;
+  /* stack vertically */
+  flex-direction: column;
+  /* nothing comes out of container  */
+  overflow: hidden;
+}
+
+/* small cups  */
+.cup.cup-small {
+  /* make dimensions smaller */
+  height: 95px;
+  width: 50px;
+  /* top 0 | bottom 0 | right 15 | left 15 */
+  border-radius: 0 0 15px 15px;
+  /* white with 0.9 opacity */
+  background-color: rgba(255, 255, 255, 0.9);
+  /* pointer when hovered */
+  cursor: pointer;
+  /* smaller font  */
+  font-size: 14px;
+  /* Centered horizontally */
+  align-items: center;
+  /* vertically centered */
+  justify-content: center;
+  /* text centered horizontally */
+  text-align: center;
+  /* 5px all around  */
+  margin: 5px;
+  /* 0.3s on all transitionable properties  */
+  transition: 0.3s ease;
+}
+
+/* cups with full class  */
+.cup.cup-small.full {
+  background-color: var(--fill-color);
+  color: #fff;
+}
+
+/* cups container */
+.cups {
+  display: flex;
+  /* wrap down to next line if needed */
+  flex-wrap: wrap;
+  /* container with 280px  */
+  width: 280px;
+  /* Centered horizontally */
+  align-items: center;
+  /* vertically centered */
+  justify-content: center;
+}
+
+.remained {
+  display: flex;
+  /* stack vertically */
+  flex-direction: column;
+  /* Centered horizontally */
+  align-items: center;
+  /* vertically centered */
+  justify-content: center;
+  /* text centered horizontally */
+  text-align: center;
+  /* flex-grow: 1; fill container */
+  flex: 1;
+  /* 0.3s on all transitionable properties  */
+  transition: 0.3s ease;
+}
+
+/* span in remained div  */
+.remained span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* small in remained div */
+.remained small {
+  font-size: 12px;
+}
+
+.percentage {
+  background-color: var(--fill-color);
+  display: flex;
+  /* Centered horizontally */
+  align-items: center;
+  /* vertically centered */
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  /* initial height of 0 */
+  height: 0;
+  /* 0.3s on all transitionable properties  */
+  transition: 0.3s ease;
+}
+
+.text {
+  text-align: center;
+  /* 0 top | 0 sides | 5 bottom  */
+  margin: 0 0 5px;
 }
